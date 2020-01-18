@@ -1,7 +1,23 @@
 <?php
 
-    ob_start();
-    session_start();
+session_start();
+include 'db.php';
+
+//$_SESSION['isConnected'] = false;
+
+if (!empty($_POST['username']) && !empty($_POST['password'])) {
+
+    $_SESSION['isConnected'] = true;
+    $_SESSION['username'] = $_POST['username'];
+    $_SESSION['password'] = $_POST['password'];
+}
+
+if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true) {
+    header('Location: index.php');
+}
+
+echo 'SESSION';
+var_dump($_SESSION);
 
 ?>
 
@@ -9,27 +25,19 @@
         <h2>Login</h2>
         <div class="containerLoginForm">
 
-            <?php
-                $message = '';
+            <form action="login.php" method="post">
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Username" name="username" required>
 
-                if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password'])) {
+                <label for="password"><b>Password</b></label>
+                <input type="password" placeholder="Password" name="password" required>
 
-                    if ($_POST['username'] == '' && $_POST['password'] == '') {
+                <button type="submit">Login</button>
 
-                        $_SESSION['valid'] = true;
-                        $_SESSION['timeout'] = time();
-                        $_SESSION['username'] = '';
-
-                        echo "Connected !";
-                    }else {
-                        $message = "Wrong username or password !";
-                    }
-                }
-            ?>
+                <button type="button" class="cancelbtn">Cancel</button>
+                <span class="lostPassword"><a href="lostPassword.php"></a></span>
+            </form>
         </div>
-
-
-
     </body>
 
 
