@@ -1,10 +1,37 @@
 <?php
 
+include 'header.php';
 session_start();
 
 if (!isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == false) {
     header('Location: login.php');
 }
+
+if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true) {
+    include 'game.php';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //$var1 = "one";
 //$var2 = "two";
@@ -25,20 +52,16 @@ if (!isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == false) {
 //
 //var_dump($array);
 
-echo "SESSION";
-var_dump($_SESSION);
-
-echo "POST";
-var_dump($_POST);
-
-echo "GET";
-var_dump($_GET);
-
-echo "Hello" ." ". $_SESSION['username'] ." ". "is connected";
+//echo "SESSION";
+//var_dump($_SESSION);
+//
+//echo "POST";
+//var_dump($_POST);
+//
+//echo "GET";
+//var_dump($_GET);
+//
+//echo "Hello" ." ". $_SESSION['username'] ." ". "is connected";
 
 
 ?>
-
-<html>
-<a href="logout.php">Logout</a>
-</html>

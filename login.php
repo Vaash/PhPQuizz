@@ -35,7 +35,8 @@ var_dump($_SESSION);
                 <button type="submit">Login</button>
 
                 <button type="button" class="cancelbtn">Cancel</button>
-                <span class="lostPassword"><a href="lostPassword.php"></a></span>
+                <span class="lostPassword"><a href="lostPassword.php">Lost Password</a></span>
+                <span class="register"><a href="register.php">Register</a></span>
             </form>
         </div>
     </body>
