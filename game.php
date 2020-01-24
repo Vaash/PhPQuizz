@@ -4,12 +4,37 @@ include 'link.php';
 
 var_dump($_SESSION);
 
+
+if ()
+
+/*Check if there's an existing game_id
+ *
+ * if not:
+ *
+ * - btn "start new game"
+ *      execute new game query
+ *
+ *
+ *
+ */
+
+
+
+
+
+
+
 ?>
+
+
+
+
+
 
 
 <div class="wordToFindContainer">
     <?php
-    $wordQuery = $db->prepare('SELECT RAND(word) FROM wordtofind');
+    $sql = 'SELECT RAND(word) FROM wordtofind';
     $array = ['word'];
     $wordQuery->execute($array);
 

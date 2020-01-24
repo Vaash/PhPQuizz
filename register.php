@@ -1,11 +1,12 @@
 <?php
 
+session_start();
 include 'db.php';
 
 ?>
 
 
-<form action="login.php">
+<form action="login.php" method="post">
     <label for="username">Username</label>
     <input type="text" placeholder="Username" name="username" required>
 
@@ -19,3 +20,8 @@ include 'db.php';
 </form>
 
 
+<?php
+
+
+
+?>

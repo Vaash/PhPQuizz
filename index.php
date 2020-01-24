@@ -15,7 +15,7 @@ if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true) {
 
 
 
-
+$data = $stmt->fetch();
 
 
 
@@ -58,7 +58,7 @@ if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true) {
 //echo "POST";
 //var_dump($_POST);
 //
-//echo "GET";
+//echo "GET";1
 //var_dump($_GET);
 //
 //echo "Hello" ." ". $_SESSION['username'] ." ". "is connected";
