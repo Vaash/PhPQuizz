@@ -1,44 +1,23 @@
 <?php
 
-include 'link.php';
-
-var_dump($_SESSION);
-
-
-if ()
-
-/*Check if there's an existing game_id
- *
- * if not:
- *
- * - btn "start new game"
- *      execute new game query
- *
- *
- *
- */
+$gameOver = false;
+$pointsLeft = 10;
 
 
+    include 'link.php';
 
-
-
-
-
-?>
-
-
-
-
-
-
-
-<div class="wordToFindContainer">
-    <?php
-    $sql = 'SELECT RAND(word) FROM wordtofind';
-    $array = ['word'];
-    $wordQuery->execute($array);
-
-    $word = $wordQuery->fetchAll(PDO::FETCH_COLUMN, RAND());
+    /*
+    $sql = "SELECT RAND(word) FROM wordtofind";
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam();
+    $query = $stmt->execute();
+    $word = $query->fetch(PDO::FETCH_COLUMN, RAND());
     var_dump($word);
-    ?>
-</div>
+    */
+
+if($pointsLeft == 0) {
+    $gameOver = true;
+    echo 'GAME OVER !';
+    echo 'Try again ?';
+}
+?>

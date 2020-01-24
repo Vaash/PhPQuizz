@@ -3,8 +3,6 @@
 session_start();
 include 'db.php';
 
-//$_SESSION['isConnected'] = false;
-
 if (!empty($_POST['username']) && !empty($_POST['password'])) {
 
     $_SESSION['isConnected'] = true;
@@ -15,10 +13,6 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
 if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true) {
     header('Location: index.php');
 }
-
-echo 'SESSION';
-var_dump($_SESSION);
-
 ?>
 
     <body>
@@ -26,7 +20,7 @@ var_dump($_SESSION);
         <div class="containerLoginForm">
 
             <form action="login.php" method="post">
-                <label for="username"><b>Username</b></label>
+                <label for="username"><b>firstname</b></label>
                 <input type="text" placeholder="Username" name="username" required>
 
                 <label for="password"><b>Password</b></label>
